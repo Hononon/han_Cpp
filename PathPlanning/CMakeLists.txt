@@ -29,9 +29,9 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 # add_executable(dwa_demo Dynamic_Window_Approach/main.cpp Dynamic_Window_Approach/DWA.cpp)
 # target_link_libraries(dwa_demo PRIVATE han_CPP)
 
-# # RRT
-# add_executable(rrt_demo Rapidly-exploring_Random_Tree/main.cpp Rapidly-exploring_Random_Tree/RRT.cpp utils/geometry_utils.h)
-# target_link_libraries(rrt_demo PRIVATE han_CPP)
+# RRT
+add_executable(rrt_demo RRT/main.cpp RRT/RRT.cpp utils/geometry_utils.h)
+target_link_libraries(rrt_demo PRIVATE han_CPP)
 
 # # RRT_connect
 # add_executable(rrt_connect_demo Rapidly-exploring_Random_Tree_connect/main.cpp Rapidly-exploring_Random_Tree_connect/RRT_connect.cpp utils/geometry_utils.h)
