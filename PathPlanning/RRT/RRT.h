@@ -41,8 +41,8 @@ public:
     double robot_radius;                  // 机器人半径
 
 public:
-    RRT(vector<vector<double>> &obstacle_list,
-        vector<double> &rand_area, vector<double> &play_area, double robot_radius,
+    RRT(const vector<vector<double>> &obstacle_list,
+        const vector<double> &rand_area,const vector<double> &play_area, double robot_radius,
         double expand_dis, double goal_sample_rate, int max_iter);
 
     Node *sampleFree(); // 随机采样

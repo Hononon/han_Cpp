@@ -3,8 +3,8 @@
 
 RRT::Node::Node(double x, double y) : x(x), y(y) {};
 
-RRT::RRT(vector<vector<double>> &obstacle_list,
-         vector<double> &rand_area, vector<double> &play_area, double robot_radius,
+RRT::RRT(const vector<vector<double>> &obstacle_list,
+         const vector<double> &rand_area, const vector<double> &play_area, double robot_radius,
          double expand_dis, double goal_sample_rate, int max_iter) : obstacle_list(obstacle_list), rand_area(rand_area),
                                                                      play_area(play_area), robot_radius(robot_radius),
                                                                      expand_dis(expand_dis), goal_sample_rate(goal_sample_rate),
@@ -66,8 +66,8 @@ RRT::Node *RRT::steer(RRT::Node *from_node, RRT::Node *to_node, double extend_di
     }
     else
     {
-        new_x = from_node->x + d * cos(angle) * extend_dis;
-        new_y = from_node->y + d * sin(angle) * extend_dis;
+        new_x = from_node->x + cos(angle) * extend_dis;
+        new_y = from_node->y + sin(angle) * extend_dis;
     }
     Node *new_node = new Node(new_x, new_y);
     new_node->path_x.push_back(from_node->x);
@@ -103,8 +103,9 @@ bool RRT::obstacleFree(RRT::Node *node)
     //         Point obstacleCenter = {obs[0], obs[1]};
     //         double distance = distanceBetweenPoints(p1, p2);
     //         // 障碍点中心到两点连线直线的投影
-    // const Point closestPointOnLine = closestPointOnSegment(p1, p2, obstacleCenter);
+    //         const Point closestPointOnLine = closestPointOnSegment(p1, p2, obstacleCenter);
     //         double dist_to_center = distanceBetweenPoints(obstacleCenter, closestPointOnLine);
+    //         cout << dist_to_center << endl;
     //         // obs[2]障碍物半径
     //         if (dist_to_center <= obs[2] + robot_radius && dist_to_center >= 0 && dist_to_center <= distance)
     //         {
@@ -127,11 +128,13 @@ bool RRT::obstacleFree(RRT::Node *node)
     vector<double> point1 = {node->path_x[0], node->path_y[0]};
     vector<double> point2 = {node->path_x[1], node->path_y[1]};
     double l2 = sqrt(pow(point1[0] - point2[0], 2) + pow(point1[1] - point2[1], 2));
-    // double d =
     for (const auto &obs : obstacle_list)
     {
         vector<double> obstacleCenter = {obs[0], obs[1]};
-        double dist_to_center = abs((point1[1] - point2[1]) * obstacleCenter[0] + (point2[0] - point1[0]) * obstacleCenter[1] + point1[0] * point2[1] - point1[1] * point2[0]) / l2;
+        double nums = (point1[1] - point2[1]) * obstacleCenter[0] + (point2[0] - point1[0]) * obstacleCenter[1] + point1[0] * point2[1] - point1[1] * point2[0];
+        double dens = l2;
+        double dist_to_center = nums / dens;
+        cout << dist_to_center << endl;
         // obs[2]障碍物半径
         if (dist_to_center <= obs[2] + robot_radius && dist_to_center >= 0 && dist_to_center <= l2)
         {
