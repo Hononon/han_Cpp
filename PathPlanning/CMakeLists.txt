@@ -8,9 +8,9 @@ find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 
 
-# # bezier
-# add_executable(bezier_demo Bezier/main.cpp Bezier/BezierCurve.cpp)
-# target_link_libraries(bezier_demo PRIVATE han_CPP)
+# bezier
+add_executable(bezier_demo Bezier/main.cpp Bezier/Bezier.cpp)
+target_link_libraries(bezier_demo PRIVATE han_CPP)
 
 # # B-spline
 # add_executable(b_spline_demo B-spline/main.cpp B-spline/BSpline.cpp)
