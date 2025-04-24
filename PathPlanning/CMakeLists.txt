@@ -12,9 +12,9 @@ include_directories(${EIGEN3_INCLUDE_DIR})
 add_executable(bezier_demo Bezier/main.cpp Bezier/Bezier.cpp)
 target_link_libraries(bezier_demo PRIVATE han_CPP)
 
-# # B-spline
-# add_executable(b_spline_demo B-spline/main.cpp B-spline/BSpline.cpp)
-# target_link_libraries(b_spline_demo PRIVATE han_CPP)
+# B-spline
+add_executable(b_spline_demo B-Spline/main.cpp B-Spline/BSpline.cpp)
+target_link_libraries(b_spline_demo PRIVATE han_CPP)
 
 # # 曲线插值
 # add_executable(curve_demo Curve_interpolation/main.cpp )
