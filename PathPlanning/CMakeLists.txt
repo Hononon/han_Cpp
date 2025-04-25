@@ -56,3 +56,7 @@ target_link_libraries(astar_demo PRIVATE han_CPP)
 # # Dubins曲线
 # add_executable(dubins_demo Dubins_Path/main.cpp Dubins_Path/Dubins.cpp)
 # target_link_libraries(dubins_demo PRIVATE han_CPP)
+
+# QuinticPolynomial
+add_executable(QuinticPolynomial_demo QuinticPolynomial/main.cpp)
+target_link_libraries(QuinticPolynomial_demo PRIVATE han_CPP)
