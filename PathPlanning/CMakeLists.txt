@@ -60,3 +60,7 @@ target_link_libraries(astar_demo PRIVATE han_CPP)
 # QuinticPolynomial
 add_executable(QuinticPolynomial_demo QuinticPolynomial/main.cpp)
 target_link_libraries(QuinticPolynomial_demo PRIVATE han_CPP)
+
+# CubicSpiralCurve
+add_executable(CubicSpiralCurve_demo CubicSpiralCurve/main.cpp)
+target_link_libraries(CubicSpiralCurve_demo PRIVATE han_CPP)
