@@ -34,20 +34,26 @@ double evaluateQuinticPolynomial(Matrix<double, 6, 1> coeffs, double t)
 int main(int argc, char const *argv[])
 {
     // 起始和结束条件
-    Vector3d start(0, 0, 0);
-    Vector3d end(1, 0, 0);
+    Vector3d x_start(0, 2, 0);
+    Vector3d x_end(10, 6, 0);
     double T = 2.0;
+    
+    Vector3d y_start(0, 0, 0);
+    Vector3d y_end(8, 0, 0);
+
 
     // 计算五次多项式的系数
-    Matrix<double, 6, 1> coeffs = quinticPolynomial(start, end, T);
+    Matrix<double, 6, 1> x_coeffs = quinticPolynomial(x_start, x_end, T);
+    Matrix<double, 6, 1> y_coeffs = quinticPolynomial(y_start, y_end, T);
 
     // 生成绘图数据
     std::vector<double> x_vals;
     std::vector<double> y_vals;
     for (double t = 0; t <= T; t += 0.01)
     {
-        x_vals.push_back(t);
-        y_vals.push_back(evaluateQuinticPolynomial(coeffs, t));
+        x_vals.push_back(evaluateQuinticPolynomial(x_coeffs,t));
+        // x_vals.push_back(t);
+        y_vals.push_back(evaluateQuinticPolynomial(y_coeffs, t));
     }
 
     // 绘图
