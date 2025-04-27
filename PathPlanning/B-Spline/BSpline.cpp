@@ -42,7 +42,7 @@ vector<double> u_quasi_uniform(int n, int k)
     // 2. 段数:n-k+2, 控制点数减u的次数 n-k+2, 有几条bezier曲线
     double piecewise = n - k + 2;
     // n=k-1, n+k+1 = 2k, 前k个为0,后k个为1
-    if (piecewise = 1)
+    if (piecewise == 1)
     {
         for (int i = k; i < n + k + 1; i++)
         {
