@@ -56,3 +56,9 @@ target_link_libraries(QuinticPolynomial_demo PRIVATE han_CPP)
 # CubicSpiralCurve
 add_executable(CubicSpiralCurve_demo CubicSpiralCurve/main.cpp)
 target_link_libraries(CubicSpiralCurve_demo PRIVATE han_CPP)
+
+# CubicSpine
+add_executable(CubicSpline_demo CubicSpline/main.cpp)
+target_link_libraries(CubicSpline_demo PRIVATE han_CPP)
+target_link_libraries(CubicSpline_demo PRIVATE ${OpenCV_LIBS})
+

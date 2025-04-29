@@ -6,6 +6,8 @@ add_library(han_CPP INTERFACE)
 find_package(Eigen3 REQUIRED)
 target_include_directories(han_CPP INTERFACE ${EIGEN3_INCLUDE_DIR})
 
+find_package(OpenCV REQUIRED)
+
 find_package(Python3 COMPONENTS Interpreter Development REQUIRED)
 target_link_libraries(han_CPP INTERFACE Python3::Python Python3::Module)
 
