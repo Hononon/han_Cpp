@@ -10,7 +10,7 @@
 #include "cubic_spline.h"
 #include "visualization.h"
 
-using namespace cpprobotics;
+using namespace hancpp;
 
 #include "../../matplotlibcpp.h"
 namespace plt = matplotlibcpp;

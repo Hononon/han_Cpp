@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 
-namespace cpprobotics
+namespace hancpp
 {
 
     using Vec_f = std::vector<float>;

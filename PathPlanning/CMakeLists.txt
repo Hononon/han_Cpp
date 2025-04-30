@@ -62,3 +62,8 @@ add_executable(CubicSpline_demo CubicSpline/main.cpp)
 target_link_libraries(CubicSpline_demo PRIVATE han_CPP)
 target_link_libraries(CubicSpline_demo PRIVATE ${OpenCV_LIBS})
 
+# frenet optimal traj
+add_executable(frenet_opt_traj_demo FrenetOptTraj/main.cpp FrenetOptTraj/Frenet_opt_traj.cpp)
+target_link_libraries(frenet_opt_traj_demo PRIVATE han_CPP)
+target_link_libraries(frenet_opt_traj_demo PRIVATE ${OpenCV_LIBS})
+

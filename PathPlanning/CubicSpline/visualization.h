@@ -8,7 +8,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-namespace cpprobotics
+namespace hancpp
 {
 
   cv::Point2i cv_offset(

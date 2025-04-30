@@ -8,10 +8,10 @@
 #include <stdexcept>
 #include "types.h"
 
-namespace cpprobotics
+namespace hancpp
 {
-
-    Vec_f vec_diff(Vec_f input)
+    // 使用 inline 关键字避免重复定义
+    inline Vec_f vec_diff(Vec_f input)
     {
         Vec_f output;
         for (unsigned int i = 1; i < input.size(); i++)
@@ -21,7 +21,8 @@ namespace cpprobotics
         return output;
     };
 
-    Vec_f cum_sum(Vec_f input)
+    // 使用 inline 关键字避免重复定义
+    inline Vec_f cum_sum(Vec_f input)
     {
         Vec_f output;
         float temp = 0;
