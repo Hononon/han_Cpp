@@ -37,9 +37,17 @@ target_link_libraries(rrt_star_demo PRIVATE han_CPP)
 add_executable(dijkstra_demo Dijkstra/main.cpp Dijkstra/Dijkstra.cpp)
 target_link_libraries(dijkstra_demo PRIVATE han_CPP)
 
+# Dijkstra_self
+add_executable(dijkstra_self_demo Dijkstra_self/main.cpp Dijkstra_self/dijkstra_self.cpp)
+target_link_libraries(dijkstra_self_demo PRIVATE han_CPP)
+
 # astar
 add_executable(astar_demo AStar/Astar.cpp AStar/main.cpp)
 target_link_libraries(astar_demo PRIVATE han_CPP)
+
+# astar_self
+add_executable(astar_self_demo Astar_self/main.cpp Astar_self/astar_self.cpp)
+target_link_libraries(astar_self_demo PRIVATE han_CPP)
 
 # # RS曲线
 # add_executable(rs_demo Reeds_Shepp_Path/main.cpp Reeds_Shepp_Path/ReedsShepp.cpp)
@@ -50,17 +58,17 @@ target_link_libraries(astar_demo PRIVATE han_CPP)
 # target_link_libraries(dubins_demo PRIVATE han_CPP)
 
 # QuinticPolynomial
-add_executable(QuinticPolynomial_demo QuinticPolynomial/main.cpp)
-target_link_libraries(QuinticPolynomial_demo PRIVATE han_CPP)
+add_executable(quintic_polynomial_demo QuinticPolynomial/main.cpp)
+target_link_libraries(quintic_polynomial_demo PRIVATE han_CPP)
 
 # CubicSpiralCurve
-add_executable(CubicSpiralCurve_demo CubicSpiralCurve/main.cpp)
-target_link_libraries(CubicSpiralCurve_demo PRIVATE han_CPP)
+add_executable(cubic_spiral_curve_demo CubicSpiralCurve/main.cpp)
+target_link_libraries(cubic_spiral_curve_demo PRIVATE han_CPP)
 
 # CubicSpine
-add_executable(CubicSpline_demo CubicSpline/main.cpp)
-target_link_libraries(CubicSpline_demo PRIVATE han_CPP)
-target_link_libraries(CubicSpline_demo PRIVATE ${OpenCV_LIBS})
+add_executable(cubic_spline_demo CubicSpline/main.cpp)
+target_link_libraries(cubic_spline_demo PRIVATE han_CPP)
+target_link_libraries(cubic_spline_demo PRIVATE ${OpenCV_LIBS})
 
 # frenet optimal traj
 add_executable(frenet_opt_traj_demo FrenetOptTraj/main.cpp FrenetOptTraj/Frenet_opt_traj.cpp)
